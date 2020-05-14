@@ -1,0 +1,29 @@
+{
+  "name": "pteeasyfiller",
+  "version": "1.0.0",
+  "description": "This is a filler for PTE's created at CIRC.",
+  "main": "main.js",
+  "dependencies": {
+    "readline": "^1.3.0",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sriRacha21/PTEEasyFiller.git"
+  },
+  "keywords": [
+    "pte",
+    "circ",
+    "template"
+  ],
+  "author": "sriRacha21",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/sriRacha21/PTEEasyFiller/issues"
+  },
+  "homepage": "https://github.com/sriRacha21/PTEEasyFiller#readme"
+}
