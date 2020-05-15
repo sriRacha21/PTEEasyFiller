@@ -14,10 +14,10 @@ import edu.rutgers.elearning.component.questions.MultipleChoiceQuestion;
 import edu.rutgers.elearning.component.questions.QuestionAnswer;
 
 /**
- * PTE ID: #PTEID
- * PTE Name: #PTEname
+ * PTE ID: #pteID
+ * PTE Name: #pteName
  * 
- * @author #NAME
+ * @author #name
  */
 public class Template extends ProblemTemplateEngine {
 	
