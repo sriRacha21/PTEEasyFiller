@@ -14,14 +14,16 @@ import edu.rutgers.elearning.component.questions.MultipleChoiceQuestion;
 import edu.rutgers.elearning.component.questions.QuestionAnswer;
 
 /**
- * PTE ID: >>>pteID
- * PTE Name: >>>pteName
+ * PTE ID: 420
+ * PTE Name: something
  * 
- * @author >>>name
+ * @author arjun
  */
-public class >>>className extends ProblemTemplateEngine {
+public class Template extends ProblemTemplateEngine {
 	
-	>>>vars
+	float a;
+	double b;
+	int c;
 
 	ArrayList<String> distractors = new ArrayList<String>();
 	Random rand = new Random();
@@ -76,7 +78,29 @@ public class >>>className extends ProblemTemplateEngine {
 		List<QuestionAnswer> answers = new ArrayList<QuestionAnswer>();
 
 		answers.add(formatAnswer(answer, true, 0));
-
+		/*List<SigfigNumber> values = new ArrayList<SigfigNumber>(answer_count);
+		values.add(answer);
+		
+		int exponent = answer.getExponentDecimal();
+		int sigfigs = answer.getSignificantDigitsRounded();
+		double min_diff = Math.pow(10,-answer.getDecimalDigitsRounded());
+		if (sigfigs > 1) min_diff *= 3;
+		while (answers.size() < answer_count) {
+			Boolean good = true;
+			SigfigNumber value = SigfigNumber.random(exponent, sigfigs);
+			for (SigfigNumber existing : values) {
+				if (Math.abs(value.doubleValue() - existing.doubleValue()) < min_diff) {
+					good = false;
+					break;
+				}
+			}
+			if (good) {
+				values.add(value);
+				answers.add(formatAnswer(value, false));
+			}
+		}*/
+		
+		
 		return answers;
 	}
 	
@@ -88,8 +112,6 @@ public class >>>className extends ProblemTemplateEngine {
 	 */
 	public String getQuestionText() {
 		String question = null;
-
-		>>>question
 		
 		return question;
 	}
@@ -163,7 +185,9 @@ public class >>>className extends ProblemTemplateEngine {
 	public String storeVersion()
 	{
 		HashMap<String, Object> dataMap = new HashMap<String, Object>();
-		>>>distractorVars
+		dataMap.put("a ", a)
+		dataMap.put("b ", b)
+		dataMap.put("c ", c)
 		
 		return dataMap.toString();
 	}

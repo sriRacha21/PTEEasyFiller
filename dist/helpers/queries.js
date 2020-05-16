@@ -23,13 +23,16 @@ function askRepeat(question, regex, blankCheck) {
 exports.askRepeat = askRepeat;
 // repeatedly ask for separate fields until there is an empty string
 // one of the params is a builder that decides where the number will be inserted in the question
-function askRepeatMultiple(questionBuilder, regex) {
+function askRepeatMultiple(questionBuilder, regex, count) {
     // insert an empty line in terminal
     console.log('');
     var responses = [];
     var i = 0;
     var input;
     do {
+        // break if the count arg is used and the count is reached
+        if (!!count && i >= count)
+            break;
         var question = questionBuilder(++i);
         input = askRepeat(question, regex, false);
         if (input != "")

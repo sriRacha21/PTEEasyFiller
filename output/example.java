@@ -14,14 +14,16 @@ import edu.rutgers.elearning.component.questions.MultipleChoiceQuestion;
 import edu.rutgers.elearning.component.questions.QuestionAnswer;
 
 /**
- * PTE ID: >>>pteID
- * PTE Name: >>>pteName
+ * PTE ID: 42069
+ * PTE Name: example
  * 
- * @author >>>name
+ * @author Arjun
  */
-public class >>>className extends ProblemTemplateEngine {
+public class example extends ProblemTemplateEngine {
 	
-	>>>vars
+	int a;
+	double b;
+	float c;
 
 	ArrayList<String> distractors = new ArrayList<String>();
 	Random rand = new Random();
@@ -89,7 +91,14 @@ public class >>>className extends ProblemTemplateEngine {
 	public String getQuestionText() {
 		String question = null;
 
-		>>>question
+		int questionSelection = rand.nextInt(3);
+		
+		switch( questionSelection ) {
+			case 0: question = "This is an example question."; break;
+			case 1: question = "Another example."; break;
+			case 2: question = "Not an example???"; break;
+		}
+		
 		
 		return question;
 	}
@@ -163,7 +172,9 @@ public class >>>className extends ProblemTemplateEngine {
 	public String storeVersion()
 	{
 		HashMap<String, Object> dataMap = new HashMap<String, Object>();
-		>>>distractorVars
+		dataMap.put("a ", a)
+		dataMap.put("b ", b)
+		dataMap.put("c ", c)
 		
 		return dataMap.toString();
 	}

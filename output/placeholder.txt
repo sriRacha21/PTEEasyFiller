@@ -1,0 +1,1 @@
+I am a file solely used to track the output folder for git. Hello!

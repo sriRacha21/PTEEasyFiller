@@ -20,17 +20,19 @@ export function askRepeat( question: string, regex?: RegExp, blankCheck = true )
 
 // repeatedly ask for separate fields until there is an empty string
 // one of the params is a builder that decides where the number will be inserted in the question
-export function askRepeatMultiple( questionBuilder: (questionNumber: number) => string, regex?: RegExp ): Array<String> {
+export function askRepeatMultiple( questionBuilder: (questionNumber: number) => string, regex?: RegExp, count?: number ): string[] {
     // insert an empty line in terminal
     console.log('');
 
-    const responses: Array<String> = [];
-
+    const responses: string[] = [];
+    
     let i: number = 0;
     let input: string;
     do {
-        const question: string = questionBuilder(++i);
+        // break if the count arg is used and the count is reached
+        if( !!count && i >= count ) break;
 
+        const question: string = questionBuilder(++i);
         input = askRepeat(question, regex, false);
         if( input != "" ) responses.push(input);
     } while( input != "" )
