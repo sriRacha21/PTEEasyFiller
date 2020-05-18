@@ -5,13 +5,15 @@ import * as assert from 'assert';
 import * as fs from 'fs';
 // used to read in lines from the terminal, might use a front-end someday
 import * as readline from 'readline-sync';
-import { askRepeat, askRepeatMultiple } from './helpers/queries'
+import { askRepeat, askRepeatMultiple, askDefault } from './helpers/queries'
 import { findTabLevel, insertTabs } from './helpers/tabs'
 import { colors } from './helpers/coloredText'
 // get version from package.json
 const version = JSON.parse(fs.readFileSync('package.json').toString()).version;
 // get variable prefix from config
-const prefix = JSON.parse(fs.readFileSync('pteEasyFillConfig.json').toString()).prefix;
+const pteConfig = JSON.parse(fs.readFileSync('pteEasyFillConfig.json').toString())
+const prefix = pteConfig.prefix;
+const defaultTemplateLocation = pteConfig.defaultTemplateLocation;
 
 /*  WELCOME BLOCK   */
 console.log(`${colors.Bright}${colors.Underscore}PTE Easy Filler v${version} by Arjun Srivastav${colors.Reset}
@@ -27,9 +29,8 @@ ${colors.Underscore}Tips:${colors.Reset}
 
 /*  REQUEST BLOCK   */
 // ask for template location (default to template.txt)
-const maybeTemplateLocation: string = readline.question(`${colors.FgCyan}What is the filename of the template you are using? (template.txt): ${colors.Reset}`);
+const templateLocation = askDefault( "What is the filename of the template you are using?", defaultTemplateLocation );
 // read in template
-const templateLocation: string = maybeTemplateLocation.length > 0 ? maybeTemplateLocation : "template.txt";
 let template: string;
 try {
     template = fs.readFileSync(templateLocation).toString()

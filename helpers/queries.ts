@@ -18,6 +18,12 @@ export function askRepeat( question: string, regex?: RegExp, blankCheck = true )
     return input;
 }
 
+// ask question with a default option
+export function askDefault( question: string, defaultOption: string, ): string {
+    const maybeInput = readline.question(`${colors.FgCyan}${question} (${defaultOption}) ${colors.Reset}`)
+    return maybeInput.length > 0 ? maybeInput : defaultOption;
+}
+
 // repeatedly ask for separate fields until there is an empty string
 // one of the params is a builder that decides where the number will be inserted in the question
 export function askRepeatMultiple( questionBuilder: (questionNumber: number) => string, regex?: RegExp, count?: number ): string[] {
