@@ -18,6 +18,7 @@ import edu.rutgers.elearning.component.questions.QuestionAnswer;
  * PTE Name: >>>pteName
  * 
  * @author >>>name
+ * This file was generated in part by PTEEasyFiller v>>>version by Arjun Srivastav.
  */
 public class >>>className extends ProblemTemplateEngine {
 	
@@ -25,7 +26,7 @@ public class >>>className extends ProblemTemplateEngine {
 
 	ArrayList<String> distractors = new ArrayList<String>();
 	Random rand = new Random();
-	SigfigNumber answer;
+	>>>answerType answer;
 	
 	/**
 	 * Constructor for the Template class - to be completed
@@ -42,7 +43,7 @@ public class >>>className extends ProblemTemplateEngine {
 			int debugmode, QuestionType type) {
 		super(problemtemplate_id, criticalskill_ids, debugmode, type);
 		// TODO Auto-generated constructor stub
-		
+		>>>generatedVars
 	}
 	
 	/**
@@ -163,7 +164,7 @@ public class >>>className extends ProblemTemplateEngine {
 	public String storeVersion()
 	{
 		HashMap<String, Object> dataMap = new HashMap<String, Object>();
-		>>>distractorVars
+		>>>versionVars
 		
 		return dataMap.toString();
 	}
