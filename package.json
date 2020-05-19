@@ -1,6 +1,6 @@
 {
   "name": "@sriracha21/pteeasyfiller",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "description": "This is a filler for PTE's created at CIRC.",
   "main": "main.js",
   "dependencies": {
@@ -13,7 +13,7 @@
     "typescript": "^3.9.2"
   },
   "scripts": {
-    "test": "node dist/main.js",
+    "test": "./dist/main.js",
     "tsc:w": "tsc -w"
   },
   "repository": {

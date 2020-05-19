@@ -32,10 +32,8 @@ I'm open source!: https://github.com/sriRacha21/PTEEasyFiller/
 ${colors.Underscore}Tips:${colors.Reset}
 * Prompts that require input will ask for input repeatedly until it receives an empty string and be displayed in ${colors.FgRed}red${colors.Reset}.
 * When a prompt presents a string in parentheses it means that string will be used when an empty string is entered (essentially a default option).
-
     * Questions with a default answer will be displayed in ${colors.FgCyan}cyan${colors.Reset}.
-* Press CTRL-C at any time to exit.
-`);
+* Press CTRL-C at any time to exit.`);
 
 /*  REQUEST BLOCK   */
 // ask for template location (default to template.txt)
