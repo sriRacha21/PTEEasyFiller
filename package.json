@@ -1,6 +1,6 @@
 {
-  "name": "pteeasyfiller",
-  "version": "0.0.1",
+  "name": "@sriracha21/pteeasyfiller",
+  "version": "0.0.3",
   "description": "This is a filler for PTE's created at CIRC.",
   "main": "main.js",
   "dependencies": {
@@ -30,5 +30,9 @@
   "bugs": {
     "url": "https://github.com/sriRacha21/PTEEasyFiller/issues"
   },
-  "homepage": "https://github.com/sriRacha21/PTEEasyFiller#readme"
+  "homepage": "https://github.com/sriRacha21/PTEEasyFiller#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "bin": { "pteeasyfiller": "./dist/main.js" }
 }

@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /*  IMPORT BLOCK    */
 // system
 import * as assert from 'assert';
